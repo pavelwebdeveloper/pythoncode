@@ -1,0 +1,22 @@
+def my_selection_sort(my_list):
+  
+  index_of_smallest = 0
+  for j in range(len(my_list)):
+    if(j == len(my_list) - 1):
+      break
+    smallest = my_list[j]
+    for i in range(j, len(my_list)):
+                  
+                  if(my_list[i] < smallest):
+                       
+                    smallest = my_list[i]
+                    index_of_smallest = i
+                    
+                    swap = my_list[j]
+                    my_list[j] = smallest
+                    my_list[index_of_smallest] = swap          
+      
+    
+  return my_list
+
+print(my_selection_sort([-1, 64, -64, 33, 25, -2, 0, 12, 22, 11, 0, -4, 1000, -1000000, 33]))
