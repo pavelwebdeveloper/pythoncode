@@ -1,0 +1,54 @@
+#Homework
+
+#Create a counting sort function
+
+#DETAILED GUIDE
+#For the given list of positive numbers, scan through to find the max number in the list
+#Create a new list with that many zeros inside the list
+#For every number in the list, add one to the index of that numbers value
+#Create a third array that adds one of each number into the index
+
+#EXAMPLE
+#[1, 5, 7, 3, 6, 3, 2, 3, 3, 6]
+#Max number - 7
+
+#[0, 1, 1, 4, 0, 1, 2, 1]
+#Second list with n+1 zeros inside
+
+#[0, 1, 1, 4, 0, 1, 2, 1]
+#For every number in the original list, add one to the index value
+
+#[1, 2, 3, 3, 3, 3, 5, 6, 6, 7]
+
+#[1, 2, 3, 3, 3, 3, 5, 6, 6, 7]
+#For the value of each index in the second list, add one of the index value to the new list
+
+def counting_sort(my_list):
+  max_number = 0
+  for i in range(len(my_list)):
+    if my_list[i] > max_number:
+      max_number = my_list[i]
+
+  print(max_number)
+
+  my_new_list = []
+
+  for x in range(max_number + 1):
+    my_new_list.append(0)
+
+  print(my_new_list)
+
+  for i in range(len(my_list)):
+    my_new_list[my_list[i]] += 1
+    
+  my_new_sorted_list = []
+
+  for i in range(len(my_new_list)):
+    for j in range(my_new_list[i]):
+      my_new_sorted_list.append(i)
+
+  print(my_new_list)
+
+  print(my_new_sorted_list)
+       
+counting_sort([1, 5, 7, 3, 6, 3, 2, 3, 3, 6])
