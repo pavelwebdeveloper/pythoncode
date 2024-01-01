@@ -7,8 +7,8 @@ def totalNumberOfBunnyEars(amountOfBunnies):
     else:
       return 2 + totalNumberOfBunnyEars(amountOfBunnies - 1)
 
-print(totalNumberOfBunnyEars(5))    
-
+amountOfBunnies = int(input("Please, input the amount of bunnies? "))
+print(amountOfBunnies, "bunnies have ", totalNumberOfBunnyEars(amountOfBunnies), " ears")
 
 #Write a recursive function to calculate the sum of digits of a positive integer.
 # number % 10 returns the right most digit, number // 10 returns the number without the right most digit
