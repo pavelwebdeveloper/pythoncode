@@ -1,0 +1,32 @@
+#We have a number of bunnies and each bunny has two big floppy ears. 
+#Compute the total number of ears across all the bunnies recursively (without loops or multiplication).
+
+def totalNumberOfBunnyEars(amountOfBunnies):
+    if amountOfBunnies == 0:
+      return 0
+    else:
+      return 2 + totalNumberOfBunnyEars(amountOfBunnies - 1)
+
+print(totalNumberOfBunnyEars(5))    
+
+
+#Write a recursive function to calculate the sum of digits of a positive integer.
+# number % 10 returns the right most digit, number // 10 returns the number without the right most digit
+
+def sumOfDigitsOfPositiveInteger(number):
+  if number == 0:
+    return 0
+  else:
+    return number % 10 + sumOfDigitsOfPositiveInteger(number // 10)
+
+print(sumOfDigitsOfPositiveInteger(243758))
+
+#Write a recursive function to calculate the power of a number. The function should take in 2 parameters
+
+def powerOfNumber(number, power):    
+  if power == 1:
+    return number
+  else:
+    return number * powerOfNumber(number, power - 1)
+
+print(powerOfNumber(3, 4))
