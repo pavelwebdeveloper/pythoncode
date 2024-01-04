@@ -1,0 +1,19 @@
+#In the string "Hello, Python!", print out only the word "Hello" using substrings
+
+def printHelloFromString(string):
+   print(string[0:5])
+
+printHelloFromString("Hello, Python!")
+
+#Compute recursively (no loops) how many times the string "cow" occurs in a given string
+
+def countWordCow(string):
+  if(len(string)<3):
+    return 0
+  if(string[0:3].lower() == "cow"):
+    return 1 + countWordCow(string[1:])
+  else:
+    return countWordCow(string[1:])
+
+print(countWordCow("cowcowcowcowcowcowcowcowCOWcowcowcowcowcowcowcowcowcowcowcowcowcowcowcowcowcowcowcowcowcowcow"))
+    
